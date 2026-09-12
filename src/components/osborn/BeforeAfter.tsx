@@ -89,8 +89,8 @@ export function BeforeAfter() {
               className="absolute inset-0 h-full w-full object-cover"
             />
             <div
-              className="absolute inset-y-0 left-0 overflow-hidden"
-              style={{ width: `${pos}%` }}
+              className="absolute inset-0"
+              style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
             >
               <img
                 src={beforeAfter.before.src}
@@ -98,9 +98,8 @@ export function BeforeAfter() {
                 loading="lazy"
                 draggable={false}
                 className="absolute inset-0 h-full w-full object-cover"
-                style={{ width: frameRef.current ? `${frameRef.current.clientWidth}px` : "100%" }}
               />
-              <div className="absolute inset-0 bg-ink/20" />
+              <div className="absolute inset-0 bg-ink/25" />
             </div>
 
             <span className="pointer-events-none absolute top-4 left-4 border border-brass/40 bg-ink/70 px-3 py-2 text-[0.6rem] font-bold tracking-[0.28em] text-bone uppercase">
